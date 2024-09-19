@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Payoo - Welcome to our world!</title>
+   <!-- daisyUI CDN and tailwindcss CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- font awesome CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- local css -->
+   <link rel="stylesheet" href="./styles/main.css" />
+   <!-- local js script links -->
+   <script src="./scripts/main.js"></script>
+</head>
+
+<body class=" bg-white p-1 h-screen">
+   <div class=" w-full h-full border border-red-500">
+      <header class="flex items-center justify-between w-full">
+         <div class="flex gap-1 items-center">
+            <img class="w-14" src="../images/logo.png" alt="">
+            <div>
+               <p class="text-xl font-bold">$45000</p>
+               <p class="capitalize text-slate-500">available balance</p>
+            </div>
+         </div>
+
+         <div>
+            <button class="btn btn-active btn-neutral bg-white border border-slate-300 text-slate-500">
+               <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
+               Log Out
+            </button>
+         </div>
+      </header>
+      <div class="divider"></div>
+      <div class="mb-4">
+         <h1 class="capitalize font-bold text-2xl">Welcome to Payooo!</h1>
+         <p class="text-slate-500">Enjoy easy and convenient financial services with us. Cash out charges is very low.</p>
+      </div>
+      <!-- features section -->
+      <section id="features" class="grid grid-cols-3 gap-3">
+         <!-- add money button -->
+         <button id="btn-add-money" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/add-money.png" alt="">
+            <p>Add Money</p>
+         </button>
+         <!-- cashout button -->
+         <button id="btn-cashout" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/cash-out.png" alt="">
+            <p>Cashout</p>
+         </button>
+         <!-- transfer money button -->
+         <button id="btn-transfer-money" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/transfer-money.png" alt="">
+            <p>Transfer Money</p>
+         </button>
+         <!-- get bonus button -->
+         <button id="btn-get-bonus" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/get-bonus.png" alt="">
+            <p>Get Bonus</p>
+         </button>
+         <!-- pay bill button -->
+         <button id="btn-pay-bills" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/pay-bill.png" alt="">
+            <p>Pay Bills</p>
+         </button>
+         <!-- transfer money button -->
+         <button id="btn-transaction" class="p-2 bg-white rounded-md border border-slate-300 text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200">
+            <img class="w-[26px]" src="../images/icons/transactions.png" alt="">
+            <p>Transactionn</p>
+         </button>
+      </section>
+   </div>
+</body>
+
+</html>
