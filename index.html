@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Payoo - Welcome to our world!</title>
+   <!-- daisyUI CDN and tailwindcss CDN -->
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- local css -->
+   <link rel="stylesheet" href="./styles/main.css" />
+   <!-- local js script links -->
+   <script src="./scripts/main.js"></script>
+</head>
+
+<body class="bg-[#F4F5F7]">
+   <div class="flex justify-center items-center w-full h-screen">
+      <div class="login-form-container space-y-12">
+         <div id="logo-container" class="relative w-full max-w-sm shrink-0">
+            <img class="absolute w-[90%] left-4" src="./images/Rectangle.png" alt="">
+            <img class="relative top-6 left-28" src="./images/logo.png" alt="" />
+         </div>
+         <!-- login form -->
+         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+               <div class="form-control">
+                  <label class="label">
+                     <span class="label-text">Mobile Number</span>
+                  </label>
+                  <input type="text" placeholder="Mobile Number" class="input input-bordered rounded-full" required />
+               </div>
+               <div class="form-control">
+                  <label class="label">
+                     <span class="label-text">PIN Number</span>
+                  </label>
+                  <input type="password" placeholder="PIN Number" class="input input-bordered rounded-full" required />
+                  <label class="label">
+                     <a href="#" class="label-text-alt link link-hover">Forgot PIN?</a>
+                  </label>
+               </div>
+               <div class="form-control mt-6">
+                  <button class="btn btn-primary rounded-full">Login</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
