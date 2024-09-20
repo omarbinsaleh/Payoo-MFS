@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
          // display the appropriate section of information:
          const id = btn.dataset.info;
          document.querySelector(`#${id}`).classList.remove("hidden");
+         document.querySelector(`#${id}`).querySelector("input").focus();
       })
    })
 
@@ -61,6 +62,47 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector("#cash-in-amount").focus();
 
    })
+
+   // add "submit" event handler to the add money form:
+   const cashOutForm = document.querySelector("#cash-out-form");
+   cashOutForm.addEventListener("submit", function (event) {
+      // stop the default form submition
+      event.preventDefault();
+
+      // get the information from the user:
+      const agentNumber = document.querySelector("#agent-number").value;
+      const amount = parseFloat(document.querySelector("#cash-out-amount").value);
+      const pinNumber = document.querySelector("#cash-out-pin-number").value;
+      console.log(pinNumber)
+
+      // validate the PIN number:
+      if (pinNumber !== PIN) {
+         alert("Invalid PIN number\nPlease provide the currect PIN number!");
+         return;
+      }
+
+      // add the money to the main balance:
+      const previousBalance = parseFloat(document.querySelector("#balance-amount").innerText);
+      console.log("previous balance", previousBalance, typeof previousBalance);
+      const newBalance = previousBalance - amount;
+      document.querySelector("#balance-amount").innerHTML = newBalance;
+
+      // add an entry to transaction history:
+      const icon = "../images/icons/cash-out.png"
+      const title = "Cash out";
+      createEntry(title, icon);
+
+      //reset the form:
+      event.currentTarget.reset();
+
+      // show the user a successful message:
+      alert(`An amount of ${amount} USD has been sent successfully\nAgent Number: ${agentNumber}`);
+
+      // set the focus on the input field:
+      document.querySelector("#cash-out-amount").focus();
+
+   })
+
 
 
 })
