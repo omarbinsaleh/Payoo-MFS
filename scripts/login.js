@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
 
       // get the user information:
-      const mobileNumber = document.querySelector("#mobile-number").innerText;
-      const loginPinNumber = document.querySelector("#login-pin-number");
+      const mobileNumber = document.querySelector("#mobile-number").value;
+      const loginPinNumber = document.querySelector("#login-pin-number").value;
       console.log(mobileNumber, loginPinNumber);
 
       // validate the pin number:
