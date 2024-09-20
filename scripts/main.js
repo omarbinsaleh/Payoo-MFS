@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
    })
 
-   // add "submit" event handler to the add money form:
+   // add "submit" event handler to the "Add Money" form:
    const addMoneyForm = document.querySelector("#add-money-form");
    addMoneyForm.addEventListener("submit", function (event) {
       // stop the default form submition
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
    })
 
-   // add "submit" event handler to the add money form:
+   // add "submit" event handler to the "Cash Out" form:
    const cashOutForm = document.querySelector("#cash-out-form");
    cashOutForm.addEventListener("submit", function (event) {
       // stop the default form submition
