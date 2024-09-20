@@ -2,6 +2,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
    const PIN = "1234";
 
+   // add "submit" event handler to the login form:
+   const loginForm = document.querySelector("#login-form");
+   loginForm.addEventListener("submit", function(event) {
+      // stop the default form submition:
+      event.preventDefault();
+
+      // get the user information:
+      const mobileNumber = document.querySelector("#mobile-number").innerText;
+      const loginPinNumber = document.querySelector("#login-pin-number");
+      console.log(mobileNumber, loginPinNumber);
+
+      // redirect to the home page:
+      window.location.href = "./pages/home.html";
+   })
+
+   // add "click" event listener to the log-out button:
+   const logOutBtn = document.querySelector("#log-out-btn");
+   logOutBtn.addEventListener("click", function() {
+      window.location.replace(window.location.origin);
+   })
+
+
    // add "click" event listener to the features buttons:
    document.querySelectorAll(".feature").forEach((btn) => {
       btn.addEventListener("click", function(event) {

@@ -23,24 +23,24 @@
          </div>
          <!-- login form -->
          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form class="card-body">
+            <form id="login-form" class="card-body">
                <div class="form-control">
                   <label class="label">
                      <span class="label-text">Mobile Number</span>
                   </label>
-                  <input type="text" placeholder="Mobile Number" class="input input-bordered rounded-full" required />
+                  <input id="mobile-number" type="number" placeholder="e.g: 01832560834" class="input input-bordered rounded-full" required minlength="11" maxlength="11"/>
                </div>
                <div class="form-control">
                   <label class="label">
                      <span class="label-text">PIN Number</span>
                   </label>
-                  <input type="password" placeholder="PIN Number" class="input input-bordered rounded-full" required />
+                  <input id="login-pin-number" type="password" placeholder="PIN Number" class="input input-bordered rounded-full" required maxlength="4"/>
                   <label class="label">
                      <a href="#" class="label-text-alt link link-hover">Forgot PIN?</a>
                   </label>
                </div>
                <div class="form-control mt-6">
-                  <button class="btn btn-primary rounded-full">Login</button>
+                  <button type="submit" class="btn btn-primary rounded-full">Login</button>
                </div>
             </form>
          </div>
