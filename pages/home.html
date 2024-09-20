@@ -15,21 +15,21 @@
    <!-- local css -->
    <link rel="stylesheet" href="./styles/main.css" />
    <!-- local js script links -->
-   <script src="./scripts/main.js"></script>
+   <script src="../scripts/main.js"></script>
 </head>
 
 <body class=" bg-white p-1 h-screen">
-   <div class=" w-full h-full">
-      <header class="sticky top-0 left-0 bg-white py-4 shadow-md mb-6 border-b border-slate-400">
+   <div class=" w-full h-full flex flex-col">
+      <header class="sticky top-0 left-0 bg-white py-4 shadow-md mb-6 border-b border-slate-400 z-10">
          <div class="flex items-center justify-between w-full">
             <div class="flex gap-1 items-center">
                <img class="w-14" src="../images/logo.png" alt="">
                <div>
-                  <p class="text-xl font-bold">$45000</p>
+                  <p class="text-xl font-bold">$<span id="balance-amount">45000</span></p>
                   <p class="capitalize text-slate-500">available balance</p>
                </div>
             </div>
-   
+
             <div>
                <button class="btn btn-active btn-neutral bg-white border border-slate-300 text-slate-700">
                   <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
@@ -41,53 +41,69 @@
       </header>
       <div class="mb-4">
          <h1 class="capitalize font-bold text-2xl">Welcome to Payooo!</h1>
-         <p class="text-slate-500">Enjoy easy and convenient financial services with us. Cash out charges is very low.</p>
+         <p class="text-slate-500">Enjoy easy and convenient financial services with us. Cash out charges is very low.
+         </p>
       </div>
       <!-- features section -->
       <section id="features" class="grid grid-cols-3 gap-4 p-2 mb-6">
          <!-- add money button -->
-         <button id="btn-add-money" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <button id="btn-add-money"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-add-money">
             <img class="w-[26px]" src="../images/icons/add-money.png" alt="">
             <p>Add Money</p>
          </button>
          <!-- cashout button -->
-         <button id="btn-cashout" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <button id="btn-cashout"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-cash-out">
             <img class="w-[26px]" src="../images/icons/cash-out.png" alt="">
             <p>Cashout</p>
          </button>
          <!-- transfer money button -->
-         <button id="btn-transfer-money" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <button id="btn-transfer-money"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-transfer-money">
             <img class="w-[26px]" src="../images/icons/transfer-money.png" alt="">
             <p>Transfer Money</p>
          </button>
          <!-- get bonus button -->
-         <button id="btn-get-bonus" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <button id="btn-get-bonus"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-get-bonus">
             <img class="w-[26px]" src="../images/icons/get-bonus.png" alt="">
             <p>Get Bonus</p>
          </button>
          <!-- pay bill button -->
-         <button id="btn-pay-bills" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <button id="btn-pay-bills"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-pay-bill">
             <img class="w-[26px]" src="../images/icons/pay-bill.png" alt="">
             <p>Pay Bills</p>
          </button>
-         <!-- transfer money button -->
-         <button id="btn-transaction" class="p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4">
+         <!-- transaction history button -->
+         <button id="btn-transaction"
+            class="feature p-2 bg-white rounded-md text-slate-500 flex flex-col gap-1 items-center justify-center hover:bg-gray-200 ring-1 focus:ring-offset-4"
+            data-info="info-transactions">
             <img class="w-[26px]" src="../images/icons/transactions.png" alt="">
-            <p>Transactionn</p>
+            <p>Transactions</p>
          </button>
       </section>
-      <section id="info-container" class="bg-gray-200 py-4 rounded-tl-lg rounded-tr-lg">
-         <div id="info-latest-payment" class="space-y-3">
-            <header class="flex justify-between items-center">
+      <section id="info-container" class="bg-gray-200 py-4 rounded-tl-lg rounded-tr-lg flex-1 space-y-2">
+         <!-- transactions history information -->
+         <section id="info-transactions" class="space-y-3 max-h-[430px] overflow-auto ">
+            <header class="flex justify-between items-center sticky top-0 left-0 pb-3 px-3 bg-gray-200">
                <div>
                   <h2 class="text-xl font-bold">Latest Payment</h2>
                </div>
                <div>
-                  <button class="px-4 py-1 text-slate-600 bg-gray-100  border border-gray-200 rounded-md hover:text-slate-400 focus:text-slate-400">View All</button>
+                  <button
+                     class="px-4 py-1 text-slate-600 bg-gray-100  border border-gray-200 rounded-md hover:text-slate-400 focus:text-slate-400">View
+                     All</button>
                </div>
             </header>
             <!-- list items -->
-            <ul id="list-latest-payment" class="p-1 space-y-3">
+            <ul id="list-transactions" class="p-1 space-y-3">
                <!-- transaction 1 -->
                <li class="py-3 px-4 bg-white rounded-md flex items-center justify-between">
                   <div class="flex items-center gap-2">
@@ -210,9 +226,42 @@
                </li>
             </ul>
 
-         </div>
+         </section>
+
+         <!-- add money section -->
+         <section id="info-add-money" class="space-y-6 px-3 hidden">
+            <header class=" sticky top-0 left-0 pb-3 bg-gray-200"></header>
+               <div >
+                  <h2 class="text-xl font-bold">Add Money</h2>
+               </div>
+            </header>
+            <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl mx-auto">
+               <form id="add-money-form" class="card-body">
+                  <div class="form-control">
+                     <label class="label">
+                        <span class="label-text">Amount to Add</span>
+                     </label>
+                     <input id="cash-in-amount" type="number" placeholder="Enter Amount" class="input  rounded-lg bg-[#F4F5F7]" required />
+                  </div>
+                  <div class="form-control">
+                     <label class="label">
+                        <span class="label-text">PIN Number</span>
+                     </label>
+                     <input id="pin-number" type="password" placeholder="Enter 4 digit PIN number"
+                        class="input rounded-lg bg-[#F4F5F7]" required maxlength="4"/>
+                     <label class="label">
+                        <a href="#" class="label-text-alt link link-hover">Forgot PIN?</a>
+                     </label>
+                  </div>
+                  <div class="form-control mt-6">
+                     <button type="submit" class="btn btn-primary rounded-lg font-bold">Add Money</button>
+                  </div>
+               </form>
+            </div>
+         </section>
       </section>
    </div>
+   <script src="../scripts/utilities.js"></script>
 </body>
 
 </html>
