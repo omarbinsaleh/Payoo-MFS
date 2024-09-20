@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       // redirect to the home page:
-      window.open(`${window.location.origin}/pages/home.html`);
+      window.open(`${window.location.origin}/Payoo-MFS/pages/home.html`);
    })
 
   
