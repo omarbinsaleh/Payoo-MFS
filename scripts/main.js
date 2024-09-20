@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
    // add "click" event listener to the log-out button:
    const logOutBtn = document.querySelector("#log-out-btn");
    logOutBtn.addEventListener("click", function () {
-      window.open(window.location.origin);
+      window.open(`${window.location.origin}/Payoo-MFS`);
    })
 
    // add "click" event listener to the features buttons:
