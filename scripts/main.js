@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(`An amount of ${amount} USD has been sent successfully\nAgent Number: ${agentNumber}`);
 
       // set the focus on the input field:
-      document.querySelector("#cash-out-amount").focus();
+      document.querySelector("#agent-number").focus();
 
    })
 
@@ -136,10 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
       event.currentTarget.reset();
 
       // show the user a successful message:
-      alert(`An amount of ${amount} USD has been transferred successfully\nTo,\n Account Number: ${userAccountNumber}`);
+      alert(`An amount of ${amount} USD is to be transferred now!!!\nTo,\n    Account Number: ${userAccountNumber}`);
 
       // set the focus on the input field:
-      document.querySelector("#cash-out-amount").focus();
+      document.querySelector("#user-account-number").focus();
 
    })
 
