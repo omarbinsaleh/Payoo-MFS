@@ -103,6 +103,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
    })
 
+   // add "submit" event handler to the "Transfer Money" form:
+   const transferMoneyForm = document.querySelector("#transfer-money-form");
+   transferMoneyForm.addEventListener("submit", function (event) {
+      // stop the default form submition
+      event.preventDefault();
 
+      // get the information from the user:
+      const userAccountNumber = document.querySelector("#user-account-number").value;
+      const amount = parseFloat(document.querySelector("#transfer-amount").value);
+      const pinNumber = document.querySelector("#transfer-money-pin-number").value;
+      console.log(pinNumber)
+
+      // validate the PIN number:
+      if (pinNumber !== PIN) {
+         alert("Invalid PIN number\nPlease provide the currect PIN number!");
+         return;
+      }
+
+      // add the money to the main balance:
+      const previousBalance = parseFloat(document.querySelector("#balance-amount").innerText);
+      console.log("previous balance", previousBalance, typeof previousBalance);
+      const newBalance = previousBalance - amount;
+      document.querySelector("#balance-amount").innerHTML = newBalance;
+
+      // add an entry to transaction history:
+      const icon = "../images/icons/transfer-money.png"
+      const title = "Money Transfer";
+      createEntry(title, icon);
+
+      //reset the form:
+      event.currentTarget.reset();
+
+      // show the user a successful message:
+      alert(`An amount of ${amount} USD has been transferred successfully\nTo,\n Account Number: ${userAccountNumber}`);
+
+      // set the focus on the input field:
+      document.querySelector("#cash-out-amount").focus();
+
+   })
 
 })
